@@ -70,17 +70,15 @@ int main() {
         led.write(1);
 
         // if(brakePercent >= .3){
-        //     for(int i = 0; i < 15;i++){
-        //         strip.setPixelColor(i,255,0,0);
-        //     }
-        //     strip.show();
+            for(int i = 0; i < 15;i++){
+                strip.setPixelColor(i,255,0,0);
+            }
+            strip.show();
         // }
         // else{
         //     strip.clear();
         //     strip.show();
         // }
-        strip.setPixelColor(i,200,0,0);
-        strip.show() //jank temporary fix
         
 
         automaticAero =0;
