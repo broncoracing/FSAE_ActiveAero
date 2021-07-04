@@ -1,6 +1,8 @@
 #include <mbed.h>
 #include <Servo.h>
 #include <neopixel.h>
+#include <../BR-CAN-IDs/BR_CAN_IDs.h>
+
 
 #define DEVICE_SERIAL 0
 #define low 0                         //Change this depending on how low to let the servo go
@@ -45,7 +47,7 @@ int main() {
     while(1) {
         wait(.1);
         if(can1.read(msg)){         //Gets a message from the can bus
-            if(msg.id == 0){          //Change ID later 
+            if(msg.id == BRAKE_PRESSURE_ID){          //Change ID later 
                 brakePercent =(msg.data[0]/100.0); //The brake pressure will be stored in msg.data[x]
                 //led.write(float(brakePercent)); //This is just testing to see if the code was working
             }
